@@ -32,6 +32,11 @@ export default function SiteFooter() {
       <p className="mt-6 text-slate-500">
         © {new Date().getFullYear()} 주식회사 마인스탁. All rights reserved.
       </p>
+      <p className="mt-3">
+        <a href="/privacy" className="text-[#1f66ff] hover:underline">
+          개인정보처리방침
+        </a>
+      </p>
       <p className="mt-2 text-slate-600">
         본 내용은 투자 손실에 대한 책임을 지지 않으며, 과거 수익률이 미래
         수익을 보장하지 않습니다.
