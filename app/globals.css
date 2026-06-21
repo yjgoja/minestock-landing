@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f8ff;
+  --foreground: #0e2a52;
+  --accent: #1f66ff;
+  --accent-dark: #1249bc;
+  --card: #fff;
+  --border: #c7d8fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Pretendard", "Apple SD Gothic Neo", sans-serif;
+}
+
+.form-input {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+}
+
+.form-input::placeholder {
+  color: #7f93b8;
+}
+
+.landing-eyebrow {
+  display: inline-flex;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #1550d1;
+  background: rgba(31, 102, 255, 0.1);
+  border: 1px solid rgba(31, 102, 255, 0.35);
+  border-radius: 999px;
+}
+
+.landing-question {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #0e2a52;
+}
+
+.landing-warning {
+  padding: 0.75rem 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #38527e;
+  background: #eef4ff;
+  border: 1px solid #bfd2ff;
+  border-radius: 0.75rem;
+}
+
+.choice-btn {
+  padding: 1rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #18408b;
+  background: #fff;
+  border: 1px solid #b7cdff;
+  border-radius: 0.9rem;
+  transition: all 0.2s;
+}
+
+.choice-btn:hover {
+  color: #0a2f75;
+  border-color: #1f66ff;
+}
+
+.choice-btn-active {
+  color: #0f43a8;
+  background: rgba(31, 102, 255, 0.12);
+  border-color: #1f66ff;
+}
+
+.all-agree-btn {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #1249bc;
+  background: rgba(31, 102, 255, 0.1);
+  border: 1px solid #1f66ff;
+  border-radius: 0.85rem;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 0.95rem 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 0.85rem;
+  transition: all 0.2s;
+}
+
+.nav-btn-main {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  border: 0;
+}
+
+.nav-btn-main:hover:not(:disabled) {
+  opacity: 0.93;
+}
+
+.nav-btn-main:disabled {
+  opacity: 0.5;
+}
+
+.nav-btn-ghost {
+  color: #1a458f;
+  background: #f1f6ff;
+  border: 1px solid #aac2f9;
+}
