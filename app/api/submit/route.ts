@@ -47,7 +47,9 @@ export async function POST(request: NextRequest) {
     }
 
     const resolvedSource = source ?? "main";
-    const sheetNumber = resolvedSource === "01" ? 2 : 1;
+    const isMeta = resolvedSource === "01";
+    const sheetNumber = isMeta ? 2 : 1;
+    const sheetName = isMeta ? "시트2" : "시트1";
 
     const payload = {
       timestamp: new Date().toLocaleString("ko-KR", {
@@ -60,6 +62,7 @@ export async function POST(request: NextRequest) {
       consentMarketing: consentMarketing ? "동의" : "미동의",
       source: resolvedSource,
       sheetNumber,
+      sheetName,
     };
 
     const response = await fetch(scriptUrl, {
