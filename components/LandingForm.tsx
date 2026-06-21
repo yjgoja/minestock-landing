@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { trackMetaLead } from "./MetaPixel";
+import { pushLeadConversion } from "@/lib/gtm-events";
 
 type LandingFormProps = {
   source: "main" | "01";
@@ -74,9 +74,7 @@ export default function LandingForm({ source }: LandingFormProps) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "제출에 실패했습니다.");
 
-      if (source === "01") {
-        trackMetaLead();
-      }
+      pushLeadConversion(source);
 
       setStatus("success");
       setStep(1);
