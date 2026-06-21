@@ -15,23 +15,5 @@ export function trackMetaLead() {
 
   const testOptions = getMetaTrackOptions();
 
-  window.fbq(
-    "track",
-    "Lead",
-    {
-      content_name: "마인스탁 상담신청",
-      content_category: "meta_landing_01",
-    },
-    testOptions
-  );
-
-  window.fbq(
-    "track",
-    "CompleteRegistration",
-    {
-      content_name: "마인스탁 상담신청",
-      status: "complete",
-    },
-    testOptions
-  );
+  window.fbq("track", "Lead", {}, testOptions);
 }
