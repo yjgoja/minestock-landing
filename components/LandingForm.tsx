@@ -1,15 +1,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { trackConversion } from "@/lib/track-conversion";
+import { useRouter } from "next/navigation";
 
 type LandingFormProps = {
   source: "main" | "01";
 };
 
-type SubmitStatus = "idle" | "loading" | "success" | "error";
+type SubmitStatus = "idle" | "loading" | "error";
 
 export default function LandingForm({ source }: LandingFormProps) {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [experience, setExperience] = useState("");
   const [name, setName] = useState("");
@@ -74,15 +75,7 @@ export default function LandingForm({ source }: LandingFormProps) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "제출에 실패했습니다.");
 
-      trackConversion(source);
-
-      setStatus("success");
-      setStep(1);
-      setExperience("");
-      setName("");
-      setPhone("");
-      setConsentPrivacy(false);
-      setConsentMarketing(false);
+      router.push(source === "01" ? "/01/complete" : "/complete");
     } catch (err) {
       setStatus("error");
       setErrorMessage(
@@ -90,25 +83,6 @@ export default function LandingForm({ source }: LandingFormProps) {
       );
     }
   };
-
-  if (status === "success") {
-    return (
-      <div className="py-8 text-center">
-        <div className="mb-4 text-5xl">✓</div>
-        <h3 className="mb-2 text-xl font-bold text-[#1f66ff]">
-          상담 신청이 완료되었습니다!
-        </h3>
-        <p className="mb-6 text-slate-400">곧 전문 상담사가 연락드리겠습니다.</p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className="text-sm text-[#1f66ff] underline"
-        >
-          추가 신청하기
-        </button>
-      </div>
-    );
-  }
 
   return (
     <div className="space-y-6">
