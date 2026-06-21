@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { pushLeadConversion } from "@/lib/gtm-events";
+import { trackConversion } from "@/lib/track-conversion";
 
 type LandingFormProps = {
   source: "main" | "01";
@@ -74,7 +74,7 @@ export default function LandingForm({ source }: LandingFormProps) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "제출에 실패했습니다.");
 
-      pushLeadConversion(source);
+      trackConversion(source);
 
       setStatus("success");
       setStep(1);
