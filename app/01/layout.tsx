@@ -1,11 +1,15 @@
-const PIXEL_ID =
-  process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "1038089281989595";
+import {
+  META_PIXEL_ID,
+  getMetaTrackOptionsScriptSuffix,
+} from "@/lib/meta-pixel";
 
 export default function MetaLandingLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const trackSuffix = getMetaTrackOptionsScriptSuffix();
+
   return (
     <>
       <script
@@ -19,8 +23,8 @@ export default function MetaLandingLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${PIXEL_ID}');
-            fbq('track', 'PageView');
+            fbq('init', '${META_PIXEL_ID}');
+            fbq('track', 'PageView'${trackSuffix});
           `,
         }}
       />
@@ -29,7 +33,7 @@ export default function MetaLandingLayout({
           height="1"
           width="1"
           style={{ display: "none" }}
-          src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
+          src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
           alt=""
         />
       </noscript>
