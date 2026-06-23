@@ -41,7 +41,7 @@ export default function PrivacyAgreementPage() {
         <h2 className="text-base font-bold text-[#0e2a52]">사업자 정보</h2>
         <p className="mt-3">상호명: 주식회사 마인스탁</p>
         <p>대표자: 김학기</p>
-        <p>사업자등록번호: 110111-7655339</p>
+        <p>법인등록번호: 110111-7655339</p>
         <p>
           주소: 인천광역시 중구 큰골목길 69, 2층 201호(전동, 스마트스페이스)
         </p>
