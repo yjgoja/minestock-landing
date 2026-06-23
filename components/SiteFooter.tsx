@@ -13,19 +13,19 @@ export default function SiteFooter() {
         <p>
           이메일:{" "}
           <a
-            href="mailto:yjgoja@gmail.com"
+            href="mailto:minestock@naver.com"
             className="text-[#1f66ff] hover:underline"
           >
-            yjgoja@gmail.com
+            minestock@naver.com
           </a>
         </p>
         <p>
           전화번호:{" "}
           <a
-            href="tel:010-8345-0999"
+            href="tel:010-9093-7425"
             className="text-[#1f66ff] hover:underline"
           >
-            010-8345-0999
+            010-9093-7425
           </a>
         </p>
       </div>

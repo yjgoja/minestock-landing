@@ -48,8 +48,8 @@ export default function MarketingAgreementPage() {
         <p>
           주소: 인천광역시 중구 큰골목길 69, 2층 201호(전동, 스마트스페이스)
         </p>
-        <p>이메일: yjgoja@gmail.com</p>
-        <p>전화번호: 010-8345-0999</p>
+        <p>이메일: minestock@naver.com</p>
+        <p>전화번호: 010-9093-7425</p>
       </section>
     </main>
   );
