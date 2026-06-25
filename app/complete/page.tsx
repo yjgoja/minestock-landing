@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import CompleteTracker from "@/components/CompleteTracker";
 import SiteFooter from "@/components/SiteFooter";
 import ThankYouCard from "@/components/ThankYouCard";
 
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 export default function CompletePage() {
   return (
     <main className="min-h-screen bg-[#f4f8ff]">
-      <CompleteTracker source="main" />
       <section className="relative isolate overflow-hidden border-b border-[#c7d8fb]">
         <div
           className="absolute inset-0 bg-cover bg-center"
